@@ -41,7 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
                 component: path.resolve(`./src/templates/blog-post.js`),
                 context: {
                     slug: node.fields.slug
-                }   // pass to blog-post.js
+                }   // pass actual slug value to blog-post.js
             })
         })
     )
