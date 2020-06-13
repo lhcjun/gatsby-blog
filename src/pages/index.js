@@ -11,15 +11,28 @@ const BlogLink = styled(Link)`
 `
 const BlogTitle = styled.h3`
   margin-bottom: 20px;
-  color: blue;
+  color: darkblue;
+`
+const ImgContainer = styled.div`
+  margin-bottom: 3rem;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;  
+
+  @media screen and (max-width: 600px){
+    height: 150px;
+    overflow: hidden;
+  }
 `
 
 export default ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <div>
-      <h1>My Thoughts</h1>
-      <h4>{ data.allMarkdownRemark.totalCount }</h4>
+      <ImgContainer>
+        <Image />
+      </ImgContainer>
+      <h4>{ data.allMarkdownRemark.totalCount } Posts</h4>
       {
         data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
@@ -31,12 +44,6 @@ export default ({ data }) => (
         ))
       }
     </div>
-
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 )
 
