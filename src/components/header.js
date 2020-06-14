@@ -39,7 +39,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </TitleLink>
       </h2>
-      <NavLink to="/page-2/">Page 2</NavLink>
+      <NavLink to="/blog/">BLOG</NavLink>
     </NavBar>
   </HeaderContainer>
 )
